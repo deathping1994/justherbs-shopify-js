@@ -34,14 +34,14 @@ setTimeout(function(){
             }).then((response) => {
                 console.log("found")
                 if (response == "true" || response == "True") {
-                    $(".commander-input")[0].value = basecode;
-                    $(".commander-btn").click();
+                    $(".tdf_input_discount")[0].value = basecode;
+                    $(".tdf_normal_btn).click();
                 }
             })
             .error(() => {
                 console.log("not found")
-                $(".commander-input")[0].value = basecode;
-                $(".commander-btn").click();
+                $(".tdf_input_discount")[0].value = basecode;
+                $(".tdf_normal_btn").click();
             });
     });
 
