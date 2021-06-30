@@ -1,4 +1,5 @@
 setTimeout(function(){ 
+    $(document).on(`page:load page:change`,'$(".tdf_input_discount")', function() {
     console.log("started")
     $('#tdf_discount_box').append(`<div class="field">
   <div class="commander-wrapper">
@@ -44,5 +45,5 @@ setTimeout(function(){
                 $(".tdf_normal_btn").click();
             });
     });
-
+    });
 }, 5000);
