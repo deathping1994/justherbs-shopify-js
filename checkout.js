@@ -22,7 +22,7 @@ setTimeout(function(){
                         $(".tdf_normal_btn").click();
                     }
                 })
-                .error(() => {
+                .fail(() => {
                     console.log("not found")
                     $(".tdf_input_discount")[0].value = basecode;
                     $(".tdf_normal_btn").click();
