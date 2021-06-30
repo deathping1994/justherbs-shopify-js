@@ -13,8 +13,8 @@ setTimeout(function () {
             event.preventDefault(); var basecode = $(".tdf_input_discount")[0].value; $.ajax({ type: "POST", url: "https://farzipromo-api-stage.farziengineer.co/discount", headers: { "Content-Type": "application/json" }, data: `{"code":"${basecode}", "cartId":"${token}"}`, }).then((response) => {
                 console.log("found")
                 if (response == "true" || response == "True") { $(".tdf_input_discount")[0].value = basecode; $(".tdf_normal_btn").click(); }
-//             }).fail(() => { $(".tdf_normal_btn").trigger("custom-event"); });
-            });
+            }).catch(() => { $(".tdf_input_discount")[0].value = basecode; $(".tdf_normal_btn").click(); });
+            
         });
     });
 }, 5000);
