@@ -21,11 +21,6 @@ setTimeout(function(){
                         $(".tdf_input_discount")[0].value = basecode;
                         $(".tdf_normal_btn").click();
                     }
-                })
-                .fail(() => {
-                    console.log("not found")
-                    $(".tdf_input_discount")[0].value = basecode;
-                    $(".tdf_normal_btn").click();
                 });
         });
     });
