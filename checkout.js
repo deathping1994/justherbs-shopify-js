@@ -1,3 +1,4 @@
+setTimeout(function(){ 
 
     $('#tdf_discount_box').append(`<div class="field">
   <div class="commander-wrapper">
@@ -41,4 +42,4 @@
                 $(".commander-btn").click();
             });
     });
-
+}, 4000);
