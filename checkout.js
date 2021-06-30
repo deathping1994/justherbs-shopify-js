@@ -1,4 +1,4 @@
-$(document).on(`page:load page:change`, function() {
+
     $('#tdf_discount_box').append(`<div class="field">
   <div class="commander-wrapper">
       <input placeholder="Discount Code" class="commander-input" data-discount-field="true" autocomplete="off" aria-required="true" size="30" type="text" name="checkout[reduction_code]">
@@ -41,4 +41,4 @@ $(document).on(`page:load page:change`, function() {
                 $(".commander-btn").click();
             });
     });
-});
+
