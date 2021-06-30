@@ -1,5 +1,5 @@
 setTimeout(function(){ 
-    $(document).on(`load change`,'$(".tdf_input_discount")', function() {
+    $(document).on(`load change`,'.tdf_input_discount', function() {
     console.log("started")
     $('#tdf_discount_box').append(`<div class="field">
   <div class="commander-wrapper">
