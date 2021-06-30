@@ -1,5 +1,6 @@
 setTimeout(function(){ 
 $(document).on(`page:load page:change`, function() {
+    console.log("started")
     $('#tdf_discount_box').append(`<div class="field">
   <div class="commander-wrapper">
       <input placeholder="Discount Code" class="commander-input" data-discount-field="true" autocomplete="off" aria-required="true" size="30" type="text" name="checkout[reduction_code]">
@@ -32,12 +33,14 @@ $(document).on(`page:load page:change`, function() {
                 },
                 data: `{"code":"${basecode}", "cartId":"${token}"}`,
             }).then((response) => {
+                console.log("found")
                 if (response == "true" || response == "True") {
                     $(".commander-input")[0].value = basecode;
                     $(".commander-btn").click();
                 }
             })
             .error(() => {
+                console.log("not found")
                 $(".commander-input")[0].value = basecode;
                 $(".commander-btn").click();
             });
