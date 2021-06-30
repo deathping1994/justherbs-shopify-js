@@ -37,9 +37,9 @@ setTimeout(function(){
                     $(".commander-btn").click();
                 }
             })
-            .catch(() => {
+            .error(() => {
                 $(".commander-input")[0].value = basecode;
                 $(".commander-btn").click();
             });
     });
-}, 4000);
+}, 5000);
