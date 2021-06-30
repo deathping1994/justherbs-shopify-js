@@ -1,12 +1,12 @@
 setTimeout(function() {
-    
-    $(".tdf_normal_btn").on("custom-event", function(){
-        console.log("custom");
-        $(".tdf_normal_btn").on("click touchstart", function(event) {
-            event.preventDefault();
-            $(".tdf_normal_btn").click();
-    });
-        
+    $(".tdf_normal_btn").on("custom-event", function() {
+            console.log("custom");
+            $(".tdf_normal_btn").on("click touchstart", function(event) {
+                event.preventDefault();
+                $(".tdf_normal_btn").click();
+            });
+        )
+    };
     $(document).on(`load change`, '.tdf_input_discount', function() {
         console.log("started")
         var token = ""
