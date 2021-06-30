@@ -35,7 +35,7 @@ setTimeout(function(){
                 console.log("found")
                 if (response == "true" || response == "True") {
                     $(".tdf_input_discount")[0].value = basecode;
-                    $(".tdf_normal_btn).click();
+                    $(".tdf_normal_btn").click();
                 }
             })
             .error(() => {
