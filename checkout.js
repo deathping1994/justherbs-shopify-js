@@ -27,8 +27,16 @@ setTimeout(function () {
                     if (response == "true" || response == "True") {
                         $(".farzipromo_input_1")[0].value = basecode;
                         $(".farzipromo_button_1").click();
-                        var interval = setInterval(() => {
-                            console.log(interval)
+                        
+                    }
+                }).fail(() => {
+                    $(".farzipromo_input_1")[0].value = basecode;
+                    $(".farzipromo_button_1").click();
+                });
+            });
+        });
+var interval = setInterval(() => {
+                            console.log("interval")
                             if($(".dcode_remove_btn.length") > 0){
                                 $(".dcode_remove_btn").on("click touchstart", function(){
                                     setTimeout(() => {
@@ -44,12 +52,4 @@ setTimeout(function () {
                             }
 
                         }, 500);
-                    }
-                }).fail(() => {
-                    $(".farzipromo_input_1")[0].value = basecode;
-                    $(".farzipromo_button_1").click();
-                });
-            });
-        });
-
 }, 5000);
