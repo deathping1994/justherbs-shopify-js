@@ -46,7 +46,7 @@ var interval = setInterval(() => {
                                             $(".tdf_normal_btn:eq(0)").addClass("farzipromo_button_1")
                                             $(".tdf_input_discount:eq(1)").addClass("farzipromo_input_2")
                                             $(".tdf_normal_btn:eq(1)").addClass("farzipromo_button_2")
-                                    }, 500);
+                                    }, 2000);
                                     
                                 })
                                 clearInterval(interval)
