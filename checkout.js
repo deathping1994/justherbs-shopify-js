@@ -1,6 +1,6 @@
 setTimeout(function () {
     $('#tdf_discount_box').after(`<div id="tdf_discount_box_2" class="tdf_content_section_discounted tdf_container tdf_nonpopup">   <div class="tdf_input_form"><input type="text" class="tdf_input_discount" placeholder="Discount code"><button type="button" class="tdf_normal_btn" data-e="dcode_apply" tdfbinded="1">Apply</button></div> </div>`)
-    $(document).on(`load change`, '#tdf_discount_box_2 .tdf_input_discount', function () {
+    // $(document).on(`load change`, '#tdf_discount_box_2 .tdf_input_discount', function () {
         console.log("started")
         $("#tdf_discount_box_2 .tdf_normal_btn").on("click touchstart", function (event) {
             event.preventDefault();
@@ -28,7 +28,7 @@ setTimeout(function () {
                 $("#tdf_discount_box .tdf_normal_btn").click();
             });
         });
-    });
+    // });
     var interval = setInterval(() => {
 
         if ($("#tdf_discount_box .tdf_input_form").length != 0 && $("#tdf_discount_box .tdf_discounted_dcode").length == 0) {
