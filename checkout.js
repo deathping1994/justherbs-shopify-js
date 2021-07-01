@@ -1,6 +1,5 @@
 setTimeout(function () {
 
-    function farzipromo() {
         $(".tdf_input_form").clone().insertAfter(".tdf_input_form")
         $(".tdf_input_discount:eq(0)").addClass("farzipromo_input_1")
         $(".tdf_normal_btn:eq(0)").addClass("farzipromo_button_1")
@@ -49,7 +48,5 @@ setTimeout(function () {
                 });
             });
         });
-    }
-    farzipromo();
 
 }, 5000);
