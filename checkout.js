@@ -39,7 +39,7 @@ var interval = setInterval(() => {
                             console.log("interval")
                             if($(".dcode_remove_btn").length > 0){
                                 $(".dcode_remove_btn").on("click touchstart", function(){
-                                    setTimeout(() => {
+                                    setTimeout(function(){
                                         console.log("timeout")
                                             $(".tdf_input_form").clone().insertAfter(".tdf_input_form")
                                             $(".tdf_input_discount:eq(0)").addClass("farzipromo_input_1")
