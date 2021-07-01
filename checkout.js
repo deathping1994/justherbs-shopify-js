@@ -37,7 +37,7 @@ setTimeout(function () {
         });
 var interval = setInterval(() => {
                             console.log("interval")
-                            if($(".dcode_remove_btn.length") > 0){
+                            if($(".dcode_remove_btn").length > 0){
                                 $(".dcode_remove_btn").on("click touchstart", function(){
                                     setTimeout(() => {
                                         console.log("timeout")
