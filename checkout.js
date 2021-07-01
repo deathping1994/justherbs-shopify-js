@@ -14,7 +14,7 @@ setTimeout(function () {
         "letter-spacing": ".8px",
         "border-radius": "2px"
     })
-    $("#tdf_discount_box_2 .tdf_input_discount").css({
+    $("#tdf_discount_box_2 .tdf_normal_btn").css({
         "background-color": "#5ea44c",
         "border": "none",
         "width": "80px",
