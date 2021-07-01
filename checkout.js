@@ -29,7 +29,7 @@ setTimeout(function () {
                         $(".farzipromo_button_1").click();
                         var interval = setInterval(() => {
                             console.log(interval)
-                            if(dcode_remove_btn.length > 0){
+                            if($(".dcode_remove_btn.length") > 0){
                                 $(".farzipromo_button_2").on("click touchstart", function(){
                                     $(".tdf_input_form").clone().insertAfter(".tdf_input_form")
                                     $(".tdf_input_discount:eq(0)").addClass("farzipromo_input_1")
