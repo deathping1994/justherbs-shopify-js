@@ -52,5 +52,5 @@ var interval = setInterval(() => {
                                 clearInterval(interval)
                             }
 
-                        }, 500);
+                        }, 1000);
 }, 5000);
