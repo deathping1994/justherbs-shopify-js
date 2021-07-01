@@ -1,20 +1,20 @@
 setTimeout(function() {
-    $(".tdf_normal_btn").on("custom-event", function() {
-        console.log("custom");
-        $(".tdf_normal_btn").on("click touchstart", function(event) {
-            event.preventDefault();
-            $(".tdf_normal_btn").click();
-        });
-    });
+
     $(document).on(`load change`, '.tdf_input_discount', function() {
         console.log("started")
         var token = ""
         $.getJSON('/cart.js', function(cart) {
             token = cart.token
         });
-        $(".tdf_normal_btn").on("click touchstart", function(event) {
+        $(".tdf_input_form").clone().insertAfter(".tdf_input_form")
+        $(".tdf_input_discount:eq(0)").addClass("farzipromo_input_1")
+        $(".tdf_normal_btn:eq(0)").addClass("farzipromo_button_1")
+        $(".tdf_input_discount:eq(1)").addClass("farzipromo_input_2")
+        $(".tdf_normal_btn:eq(1)").addClass("farzipromo_button_2")
+
+        $(".farzipromo_button_2").on("click touchstart", function(event) {
             event.preventDefault();
-            var basecode = $(".tdf_input_discount")[0].value;
+            var basecode = $(".farzipromo_input_2")[0].value;
             $.ajax({
                 type: "POST",
                 url: "https://farzipromo-api-stage.farziengineer.co/discount",
@@ -25,14 +25,13 @@ setTimeout(function() {
             }).then((response) => {
                 console.log("found")
                 if (response == "true" || response == "True") {
-                    $(".tdf_input_discount")[0].value = basecode;
-                    $(".tdf_normal_btn").click();
+                    $(".farzipromo_input_1")[0].value = basecode;
+                    $(".farzipromo_button_1").click();
                 }
             }).fail(() => {
-                $(".tdf_input_discount")[0].value = basecode;
-                $(".tdf_normal_btn").click();
+                $(".farzipromo_input_1")[0].value = basecode;
+                $(".farzipromo_button_1").click();
             });
-
         });
     });
 }, 5000);
