@@ -1,15 +1,14 @@
 setTimeout(function () {
     $('#tdf_discount_box').after(`<div id="tdf_discount_box_2" class="tdf_content_section_discounted tdf_container tdf_nonpopup">   <div class="tdf_input_form"><input type="text" class="tdf_input_discount" placeholder="Discount code"><button type="button" class="tdf_normal_btn" data-e="dcode_apply" tdfbinded="1">Apply</button></div> </div>`)
-    $(document).on(`load change`, '.tdf_input_discount:eq(1)', function () {
+    $(document).on(`load change`, '#tdf_discount_box_2 .tdf_input_discount', function () {
         console.log("started")
-        var token = ""
-        $.getJSON('/cart.js', function (cart) {
-            token = cart.token
-        });
-
-        $(".tdf_normal_btn:eq(1)").on("click touchstart", function (event) {
+        $("#tdf_discount_box_2 .tdf_normal_btn").on("click touchstart", function (event) {
             event.preventDefault();
-            var basecode = $(".tdf_input_discount:eq(1)")[0].value;
+            var token = ""
+            $.getJSON('/cart.js', function (cart) {
+                token = cart.token
+            });
+            var basecode = $("#tdf_discount_box_2 .tdf_input_discount")[0].value;
             $.ajax({
                 type: "POST",
                 url: "https://farzipromo-api-stage.farziengineer.co/discount",
@@ -20,13 +19,13 @@ setTimeout(function () {
             }).then((response) => {
                 console.log("found")
                 if (response == "true" || response == "True") {
-                    $(".tdf_input_discount:eq(0)")[0].value = basecode;
-                    $(".tdf_normal_btn:eq(0)").click();
+                    $("#tdf_discount_box .tdf_input_discount")[0].value = basecode;
+                    $("#tdf_discount_box .tdf_normal_btn").click();
 
                 }
             }).fail(() => {
-                $(".tdf_input_discount:eq(0)")[0].value = basecode;
-                $(".tdf_normal_btn:eq(0)").click();
+                $("#tdf_discount_box .tdf_input_discount")[0].value = basecode;
+                $("#tdf_discount_box .tdf_normal_btn").click();
             });
         });
     });
