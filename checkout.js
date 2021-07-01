@@ -65,4 +65,4 @@ setTimeout(function () {
             $("#tdf_discount_box_2").hide()
         }
     }, 200);
-}, 8000);
+}, 10000);
