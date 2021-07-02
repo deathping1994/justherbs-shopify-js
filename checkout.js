@@ -2,6 +2,7 @@ var cartInterval = setInterval(function () {
     if ($('#tdf_discount_box').length > 0) {
         clearInterval(cartInterval)
         $('#tdf_discount_box').after(`<div id="tdf_discount_box_2" class="tdf_content_section_discounted tdf_container tdf_nonpopup">   <div class="tdf_input_form"><input type="text" class="tdf_input_discount" placeholder="Discount code"><button type="button" class="tdf_normal_btn" data-e="dcode_apply" tdfbinded="1">Apply</button></div> </div>`)
+        $('#tdf_discount_box').css({"display":"none"})
         $("#tdf_discount_box_2").css({ "text-align": "center", "margin-bottom": "10px" })
         $("#tdf_discount_box_2 .tdf_input_form").css({ "color": "#212b36" })
         $("#tdf_discount_box_2 .tdf_input_discount").css({
