@@ -38,7 +38,7 @@ var cartInterval = setInterval(function () {
             var basecode = $("#tdf_discount_box_2 .tdf_input_discount")[0].value;
             $.ajax({
                 type: "POST",
-                url: "https://farzipromo-api-stage.farziengineer.co/discount",
+                url: "https://justherbs-api-.farziengineer.co/discount",
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -50,7 +50,7 @@ var cartInterval = setInterval(function () {
                     $("#tdf_discount_box .tdf_normal_btn").click();
                     setTimeout(function () {
                         var couponlog_postrequest = {
-                            url: "https://farzipromo-api-stage.farziengineer.co/couponlog",
+                            url: "https://justherbs-api.farziengineer.co/couponlog",
                             method: "POST",
                             timeout: 0,
                             headers: {
@@ -87,7 +87,7 @@ var cartInterval = setInterval(function () {
                 $("#tdf_discount_box .tdf_normal_btn").click();
                 setTimeout(function () {
                     var couponlog_postrequest = {
-                        url: "https://farzipromo-api-stage.farziengineer.co/couponlog",
+                        url: "https://justherbs-api.farziengineer.co/couponlog",
                         method: "POST",
                         timeout: 0,
                         headers: {
