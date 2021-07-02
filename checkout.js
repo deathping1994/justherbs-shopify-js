@@ -26,14 +26,14 @@ var cartInterval = setInterval(function () {
             "border-radius": "2px",
             "cursor": "pointer"
         })
-
+        var token = ""
+        $.getJSON('/cart.js', function (cart) {
+            token = cart.token
+        });
         console.log("started")
         $("#tdf_discount_box_2 .tdf_normal_btn").on("click touchstart", function (event) {
             event.preventDefault();
-            var token = ""
-            $.getJSON('/cart.js', function (cart) {
-                token = cart.token
-            });
+            
             var basecode = $("#tdf_discount_box_2 .tdf_input_discount")[0].value;
             $.ajax({
                 type: "POST",
