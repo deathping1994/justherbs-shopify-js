@@ -38,7 +38,7 @@ var cartInterval = setInterval(function () {
             var basecode = $("#tdf_discount_box_2 .tdf_input_discount")[0].value;
             $.ajax({
                 type: "POST",
-                url: "https://justherbs-api-.farziengineer.co/discount",
+                url: "https://justherbs-api.farziengineer.co/discount",
                 headers: {
                     "Content-Type": "application/json"
                 },
