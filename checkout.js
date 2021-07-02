@@ -45,11 +45,75 @@ setTimeout(function () {
             if (response == "true" || response == "True") {
                 $("#tdf_discount_box .tdf_input_discount")[0].value = basecode;
                 $("#tdf_discount_box .tdf_normal_btn").click();
+                setTimeout(function () {
+                    var couponlog_postrequest = {
+                        url: "https://farzipromo-api-stage.farziengineer.co/couponlog",
+                        method: "POST",
+                        timeout: 0,
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    };
+                    var v = setInterval(function () {
+                        if ($(".tdf_notify").length != 0 && $(".tdf_notify").css("display") != "none") {
+                            couponlog_postrequest.data = JSON.stringify({
+                                coupon: basecode,
+                                log: $(".tdf_notify div").text(),
+                            });
+                            $.ajax(couponlog_postrequest).done(function (response) {
+                                console.log(response);
+                            });
+                            clearInterval(v);
+                        }
+                        else if ($("#tdf_discount_box .tdf_discounted_dcode").length.length != 0) {
+                            couponlog_postrequest.data = JSON.stringify({
+                                coupon: basecode,
+                                log: $("#tdf_discount_box .tdf_discounted_dcode .tdf_coupon_mess").text(),
+                            });
+                            $.ajax(couponlog_postrequest).done(function (response) {
+                                console.log(response);
+                            });
+                            clearInterval(v);
+                        }
+                    }, 500);
+                }, 2000);
 
             }
         }).fail(() => {
             $("#tdf_discount_box .tdf_input_discount")[0].value = basecode;
             $("#tdf_discount_box .tdf_normal_btn").click();
+            setTimeout(function () {
+                var couponlog_postrequest = {
+                    url: "https://farzipromo-api-stage.farziengineer.co/couponlog",
+                    method: "POST",
+                    timeout: 0,
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                };
+                var v = setInterval(function () {
+                    if ($(".tdf_notify").length != 0 && $(".tdf_notify").css("display") != "none") {
+                        couponlog_postrequest.data = JSON.stringify({
+                            coupon: basecode,
+                            log: $(".tdf_notify div").text(),
+                        });
+                        $.ajax(couponlog_postrequest).done(function (response) {
+                            console.log(response);
+                        });
+                        clearInterval(v);
+                    }
+                    else if ($("#tdf_discount_box .tdf_discounted_dcode").length.length != 0) {
+                        couponlog_postrequest.data = JSON.stringify({
+                            coupon: basecode,
+                            log: $("#tdf_discount_box .tdf_discounted_dcode .tdf_coupon_mess").text(),
+                        });
+                        $.ajax(couponlog_postrequest).done(function (response) {
+                            console.log(response);
+                        });
+                        clearInterval(v);
+                    }
+                }, 500);
+            }, 2000);
         });
     });
 
