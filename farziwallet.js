@@ -2,7 +2,6 @@ $(document).on(`page:load page:change`, function () {
     var flag_wallet_applied = false
     if($(".tags-list .tag:last-child").length > 0) {
         $(".tags-list .tag:last-child").each(function () {
-            console.log("taglist-check")
             var tag_text = $(this).find(".tag__wrapper .reduction-code span:first").text()
             var tag_new_text = "Wallet Applied"
             if (tag_text.startsWith("••••")) {
@@ -54,7 +53,6 @@ $(document).on(`page:load page:change`, function () {
             padding-left: 12px;
         ">`+ "₹" + response.wallet_balance +`</span></div>
           </div>`
-            console.log("wallet_div")
             $(wallet_div).insertBefore($('.section.section--payment-method'))
             $('input[type=checkbox][name=farziwallet]').click(function () {
                 $("input[type=checkbox][name=farziwallet]").css('background','#03a196');
@@ -67,12 +65,10 @@ $(document).on(`page:load page:change`, function () {
                     var tag_list_interval = setInterval(() => {
                         if ($(".tags-list .tag:last-child").length > 0) {
                             $(".tags-list .tag:last-child").each(function () {
-                                console.log("taglist")
                                 var tag_text = $(this).find(".tag__wrapper .reduction-code span:first").text()
                                 var tag_new_text = "Wallet Applied"
                                 if (tag_text.startsWith("••••")) {
                                     $(this).find(".tag__wrapper .reduction-code span:first").text(tag_new_text)
-                                    // clearInterval(tag_list_interval)
                                 }
                                 if (tag_text.startsWith("Wallet Applied")) {
                                     $(".farziwallet-div").hide()
