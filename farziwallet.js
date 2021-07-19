@@ -48,10 +48,10 @@ $(document).on(`page:load page:change`, function () {
             font-weight: 500;
             padding-left: .75em;
         ">Use Wallet Balance</label><br>
-        <div style="padding-left: 2em;height: 30px;display: flex;align-items: center;"><img src="https://img.icons8.com/ios-glyphs/30/000000/wallet-app.png" style="
+        <div style="padding-left: 2.3em;height: 30px;display: flex;align-items: center;"><img src="https://img.icons8.com/ios-glyphs/30/000000/wallet-app.png" style="
         "><span style="
             font-weight: 500;
-            padding-left: 6px;
+            padding-left: 12px;
         ">`+ "₹" + response.wallet_balance +`</span></div>
           </div>`
             console.log("wallet_div")
