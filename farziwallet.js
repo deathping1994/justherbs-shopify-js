@@ -2,6 +2,7 @@ $(document).on(`page:load page:change`, function () {
     var flag_wallet_applied = false
     if($(".tags-list .tag:last-child").length > 0) {
         $(".tags-list .tag:last-child").each(function () {
+            console.log("taglist-check")
             var tag_text = $(this).find(".tag__wrapper .reduction-code span:first").text()
             var tag_new_text = "Wallet Applied"
             if (tag_text.startsWith("••••")) {
@@ -46,11 +47,16 @@ $(document).on(`page:load page:change`, function () {
           <label for="farziwallet" style="
             font-weight: 500;
             padding-left: .75em;
-        ">Use Wallet Balance - ` + response.wallet_balance + `</label><br>
+        ">Use Wallet Balance</label><br>
+        <div style="padding-left: 2em;height: 30px;display: flex;align-items: center;"><img src="https://img.icons8.com/ios-glyphs/30/000000/wallet-app.png" style="
+        "><span style="
+            font-weight: 500;
+            padding-left: 6px;
+        ">`+ "₹" + response.wallet_balance +`</span></div>
           </div>`
+            console.log("wallet_div")
             $(wallet_div).insertBefore($('.section.section--payment-method'))
             $('input[type=checkbox][name=farziwallet]').click(function () {
-                $("input[type=checkbox][name=farziwallet]").css('background','#03a196');
                 if (this.checked && response.wallet_balance > 0) {
                     $("#checkout_reduction_code_mobile").css("color", "#ffffff")
                     console.log($("#checkout_reduction_code_mobile").css("color"))
@@ -60,10 +66,12 @@ $(document).on(`page:load page:change`, function () {
                     var tag_list_interval = setInterval(() => {
                         if ($(".tags-list .tag:last-child").length > 0) {
                             $(".tags-list .tag:last-child").each(function () {
+                                console.log("taglist")
                                 var tag_text = $(this).find(".tag__wrapper .reduction-code span:first").text()
                                 var tag_new_text = "Wallet Applied"
                                 if (tag_text.startsWith("••••")) {
                                     $(this).find(".tag__wrapper .reduction-code span:first").text(tag_new_text)
+                                    // clearInterval(tag_list_interval)
                                 }
                                 if (tag_text.startsWith("Wallet Applied")) {
                                     $(".farziwallet-div").hide()
