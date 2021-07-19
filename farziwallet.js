@@ -57,6 +57,7 @@ $(document).on(`page:load page:change`, function () {
             console.log("wallet_div")
             $(wallet_div).insertBefore($('.section.section--payment-method'))
             $('input[type=checkbox][name=farziwallet]').click(function () {
+                $("input[type=checkbox][name=farziwallet]").css('background','#03a196');
                 if (this.checked && response.wallet_balance > 0) {
                     $("#checkout_reduction_code_mobile").css("color", "#ffffff")
                     console.log($("#checkout_reduction_code_mobile").css("color"))
