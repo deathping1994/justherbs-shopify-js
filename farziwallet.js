@@ -20,6 +20,7 @@ $(document).on(`page:load page:change`, function () {
         })
     }
     if ($(".farziwallet-div").length == 0 && flag_wallet_applied == false) {
+        var customer_id  = Shopify.Checkout.customer.customer_id
         var settings = {
             "url": "https://farzipromo-api-stage.farziengineer.co/walletbalance",
             "method": "POST",
@@ -28,7 +29,7 @@ $(document).on(`page:load page:change`, function () {
                 "Content-Type": "application/json"
             },
             "data": `{
-      "customer_id": "5497891160223"
+      "customer_id": ` + customer_id + `
     }`,
         };
 
