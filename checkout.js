@@ -31,7 +31,6 @@ setTimeout(function () {
             $.getJSON('/cart.js', function (cart) {
                 token = cart.token
             });
-            console.log("started")
             $("#tdf_discount_box_2 .tdf_normal_btn").on("click touchstart", function (event) {
                 event.preventDefault();
 
@@ -44,7 +43,6 @@ setTimeout(function () {
                     },
                     data: `{"code":"${basecode}", "cartId":"${token}"}`,
                 }).then((response) => {
-                    console.log("found")
                     if (response == "true" || response == "True") {
                         $("#tdf_discount_box .tdf_input_discount")[0].value = basecode;
                         $("#tdf_discount_box .tdf_normal_btn").click();
