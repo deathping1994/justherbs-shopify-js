@@ -37,7 +37,7 @@ setTimeout(function () {
                                 if ($(".afterapplieddisctext").length != 0 && $(".afterapplieddiscsection").css("display") != "none") {
                                     couponlog_postrequest.data = JSON.stringify({
                                         coupon: basecode,
-                                        log: $(".afterapplieddiscsection afterapplieddisctext").text(),
+                                        log: $(".afterapplieddiscsection .afterapplieddisctext").text(),
                                     });
                                     $.ajax(couponlog_postrequest).done(function (response) {
                                         console.log(response);
@@ -64,7 +64,7 @@ setTimeout(function () {
                             if ($(".afterapplieddisctext").length != 0 && $(".afterapplieddisctext").css("display") != "none") {
                                 couponlog_postrequest.data = JSON.stringify({
                                     coupon: basecode,
-                                    log: $(".tdf_notify div").text(),
+                                    log: $(".afterapplieddiscsection .afterapplieddisctext").text(),
                                 });
                                 $.ajax(couponlog_postrequest).done(function (response) {
                                     console.log(response);
