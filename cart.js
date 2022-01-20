@@ -1,35 +1,11 @@
 setTimeout(function () {
     var cartInterval = setInterval(function () {
         if ($('.couponsection').length > 0 && $('.couponsection_2').length == 0 ) {
-            $('.couponsection').after(`<div class="couponsection_2">
+            $('.couponsection').after(`<div class="couponsection_2 style="margin-bottom: 10px;max-width: 300px;display: flex;margin: auto;position: relative;"">
                                             <input type="text" class="couponsdiscbox" name="couponsdiscboxtext" placeholder="Enter coupon code" value="">
                                             <button type="button" class="couponsdiscbtn"> Apply </button>
                                        </div>`)
 //             $('.couponsection').css({ "display": "none" })
-            $(".couponsection_2").css({ "text-align": "center", "margin-bottom": "10px" })
-//             $(".couponsection_2 .tdf_input_form").css({ "color": "#212b36" })
-//             $(".couponsection_2 .tdf_input_discount").css({
-//                 "width": "130px",
-//                 "border": "1px solid #d3d3db",
-//                 "margin-right": "5px",
-//                 "display": "inline-block",
-//                 "padding": "11px 12px",
-//                 "font-size": "14px",
-//                 "height": "36px",
-//                 "color": "#212b36",
-//                 "letter-spacing": ".8px",
-//                 "border-radius": "2px"
-//             })
-//             $("#tdf_discount_box_2 .tdf_normal_btn").css({
-//                 "background-color": "#5ea44c",
-//                 "border": "none",
-//                 "width": "80px",
-//                 "padding": "8px 13px",
-//                 "color": "white",
-//                 "line-height": "20px",
-//                 "border-radius": "2px",
-//                 "cursor": "pointer"
-//             })
             var token = ""
             $.getJSON('/cart.js', function (cart) {
                 token = cart.token
