@@ -1,7 +1,7 @@
 setTimeout(function () {
     var cartInterval = setInterval(function () {
         if ($('.couponsection').length > 0 && $('.couponsection_2').length == 0 ) {
-            $('.couponsection').after(`<div class="couponsection_2 style="margin-bottom: 10px;max-width: 300px;display: flex;margin: auto;position: relative;"">
+            $('.couponsection').after(`<div class="couponsection_2 style="margin-bottom: 10px;max-width: 300px;display: flex;margin: auto;position: relative;">
                                             <input type="text" class="couponsdiscbox" name="couponsdiscboxtext" placeholder="Enter coupon code" value="">
                                             <button type="button" class="couponsdiscbtn"> Apply </button>
                                        </div>`)
