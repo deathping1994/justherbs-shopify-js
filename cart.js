@@ -12,7 +12,6 @@ setTimeout(function () {
             });
             $(".couponsection_2 .couponsdiscbtn").on("click touchstart", function (event) {
                 event.preventDefault();
-
                 var basecode = $(".couponsection_2 .couponsdiscbox")[0].value;
                 $.ajax({
                     type: "POST",
@@ -35,20 +34,10 @@ setTimeout(function () {
                                 },
                             };
                             var v = setInterval(function () {
-                                if ($(".tdf_notify").length != 0 && $(".tdf_notify").css("display") != "none") {
+                                if ($(".afterapplieddisctext").length != 0 && $(".afterapplieddiscsection").css("display") != "none") {
                                     couponlog_postrequest.data = JSON.stringify({
                                         coupon: basecode,
-                                        log: $(".tdf_notify div").text(),
-                                    });
-                                    $.ajax(couponlog_postrequest).done(function (response) {
-                                        console.log(response);
-                                    });
-                                    clearInterval(v);
-                                }
-                                else if ($("#tdf_discount_box .tdf_discounted_dcode").length.length != 0) {
-                                    couponlog_postrequest.data = JSON.stringify({
-                                        coupon: basecode,
-                                        log: $("#tdf_discount_box .tdf_discounted_dcode .tdf_coupon_mess").text(),
+                                        log: $(".afterapplieddiscsection afterapplieddisctext").text(),
                                     });
                                     $.ajax(couponlog_postrequest).done(function (response) {
                                         console.log(response);
@@ -60,8 +49,8 @@ setTimeout(function () {
 
                     }
                 }).fail(() => {
-                    $("#tdf_discount_box .tdf_input_discount")[0].value = basecode;
-                    $("#tdf_discount_box .tdf_normal_btn").click();
+                    $(".couponsection .couponsdiscbox")[0].value = basecode;
+                    $(".couponsection .couponsdiscbtn").click();
                     setTimeout(function () {
                         var couponlog_postrequest = {
                             url: "https://justherbs-api.farziengineer.co/couponlog",
@@ -72,20 +61,10 @@ setTimeout(function () {
                             },
                         };
                         var v = setInterval(function () {
-                            if ($(".tdf_notify").length != 0 && $(".tdf_notify").css("display") != "none") {
+                            if ($(".afterapplieddisctext").length != 0 && $(".afterapplieddisctext").css("display") != "none") {
                                 couponlog_postrequest.data = JSON.stringify({
                                     coupon: basecode,
                                     log: $(".tdf_notify div").text(),
-                                });
-                                $.ajax(couponlog_postrequest).done(function (response) {
-                                    console.log(response);
-                                });
-                                clearInterval(v);
-                            }
-                            else if ($("#tdf_discount_box .tdf_discounted_dcode").length.length != 0) {
-                                couponlog_postrequest.data = JSON.stringify({
-                                    coupon: basecode,
-                                    log: $("#tdf_discount_box .tdf_discounted_dcode .tdf_coupon_mess").text(),
                                 });
                                 $.ajax(couponlog_postrequest).done(function (response) {
                                     console.log(response);
