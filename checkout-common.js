@@ -76,6 +76,8 @@ $(document).on(`page:load page:change`, function () {
                             }
                         }, 1000);
                     }, 3000);
+                } else {
+                    throw new Error("coupon code not valid");
                 }
             }
             ).catch(() => {
@@ -180,6 +182,8 @@ $(document).on(`page:load page:change`, function () {
                                 }
                             }, 1000);
                         }, 3000);
+                    } else {
+                        throw new Error("coupon code not valid");
                     }
                 }
                 ).catch(() => {
