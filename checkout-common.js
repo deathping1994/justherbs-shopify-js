@@ -33,7 +33,7 @@ $(document).on(`page:load page:change`, function () {
                 },
                 data: `{"code":"${basecode}", "cartId":"${token}","app":"custom_app", "client": "${window.__fp_client_name || 'just_herbs_new'}"}`,
             }).then((response) => {
-                if (response == "true" || response == "True") {
+                if (response && String(response.status) === "true") {
                     $(".commander-input")[0].value = basecode;
                     $(".commander-btn").click();
                     setTimeout(function () {
@@ -136,7 +136,7 @@ $(document).on(`page:load page:change`, function () {
                     },
                     data: `{"code":"${basecode}", "cartId":"${token}","app":"custom_app", "client": "${window.__fp_client_name || 'just_herbs_new'}"}`,
                 }).then((response) => {
-                    if (response == "true" || response == "True") {
+                    if (response && String(response.status) === "true") {
                         $(".commander-input")[0].value = basecode;
                         $(".commander-btn").click();
                         console.log("discount api");
