@@ -31,7 +31,7 @@ $(document).on(`page:load page:change`, function () {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                data: `{"code":"${basecode}", "cartId":"${token}","app":"custom_app", "client": ${window.__fp_client_name} || "just_herbs_new"}`,
+                data: `{"code":"${basecode}", "cartId":"${token}","app":"custom_app", "client": "client": "${window.__fp_client_name || 'just_herbs_new'}"}`,
             }).then((response) => {
                 if (response == "true" || response == "True") {
                     $(".commander-input")[0].value = basecode;
@@ -134,7 +134,7 @@ $(document).on(`page:load page:change`, function () {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    data: `{"code":"${basecode}", "cartId":"${token}","app":"custom_app", "client": ${window.__fp_client_name} || "just_herbs_new"}`,
+                    data: `{"code":"${basecode}", "cartId":"${token}","app":"custom_app", "client": "${window.__fp_client_name || 'just_herbs_new'}"}`,
                 }).then((response) => {
                     if (response == "true" || response == "True") {
                         $(".commander-input")[0].value = basecode;
